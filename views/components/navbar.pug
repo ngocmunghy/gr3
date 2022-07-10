@@ -1,0 +1,37 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container-fluid
+    button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarScroll', aria-controls='navbarScroll', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarScroll.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.my-2.my-lg-0.navbar-nav-scroll(style='--bs-scroll-height: 100px;')
+        li.nav-item
+          a.nav-link.active(aria-current='page', href='/', style='font-size: 1.4rem;')
+            i.fa.fa-home
+            |  HomePage
+        li.nav-item
+          a.nav-link(href='#')
+            i.fa.fa-list-alt
+            |  Intro
+        li.nav-item
+          a.nav-link(href='#')
+            i.fa.fa-envelope
+            |  Feedback
+        li.nav-item
+          a.nav-link(href='#')
+            i.fa.fa-question
+            |  Q/A
+        li.nav-item
+          a.nav-link(href='#')
+            i.fa.fa-phone
+            |  Contact     
+        li.nav-item.dropdown
+          a#navbarScrollingDropdown.nav-link.dropdown-toggle(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false') User
+          ul.dropdown-menu(aria-labelledby='navbarScrollingDropdown')
+            li
+              a.dropdown-item(href='#') User Info
+            li
+              a.dropdown-item(href='#') Change password
+            li
+              a.dropdown-item(href='#') Update info
+            li
+              a.dropdown-item(href='/users/signIn') Logout

@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Sign up
+  link(rel='stylesheet', href='/css/common.css')
+  link(rel='stylesheet', href='/css/signUp.css')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4', crossorigin='anonymous')
+  link(rel='stylesheet', type='text/css', href='./style.css')
+
+if errors 
+  each error in errors
+    .alert.alert-danger= error
+
+body 
+  .sign-up-container
+    .sign-up-title.game-title Signup Form
+    form(action='/users/signUp', method='POST')
+      div.mb-3
+        label(for="email") Email Address
+        input#email.form-control(type='text', name= "email", value=values?values.email:'')
+
+      div.mb-3
+        label(for="password") Password
+        input#password.form-control(type='password', name= "password", value=values?values.password:'')
+
+      div.mb-3
+        label(for="repass") Repeat Password
+        input#repass.form-control(type='password', name= "repass", value=values?values.repass:'')
+
+      a(href='/users/signIn').have-account-text Have an account already? Sign in now!
+      button.btn.btn-primary.sign-up-btn Sign Up

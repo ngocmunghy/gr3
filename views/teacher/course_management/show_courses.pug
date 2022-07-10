@@ -1,0 +1,67 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Main Screen
+  link(rel='stylesheet', href='/css/common.css')
+  link(rel='stylesheet', href='/css/index.css')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4', crossorigin='anonymous')
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+  link(rel='stylesheet', type='text/css', href='../css/style.css')
+include /navbar.pug
+
+body
+  .container(style='height: auto;')
+    .row
+      article.col-9
+        table.table.table-success
+          thead
+            tr
+              th(scope='col') #
+              th(scope='col') Course Id
+              th(scope='col') Course Name
+              th(scope='col') Description
+              th(scope='col') Handle
+          tbody
+            - for(let i = 0; i < length; i++)
+              tr
+                th(scope='row') #{i + 1}
+                td #{courses[i].MaKH}
+                td #{courses[i].TenKH}
+                td #{courses[i].GioiThieu}
+                td
+                  button.btn.btn-info
+                    a(href='/view_course/' + courses[i].MaKH, style='text-decoration: none; color: #000') View
+                  button.btn.btn-danger
+                    a(href='/update_course/' + courses[i].MaKH, style='text-decoration: none; color: #fff') Update
+                  button.btn.btn-warning
+                    a(href='/delete_course/' + courses[i].MaKH, style='text-decoration: none;') Delete
+
+        button.btn.btn-success
+          a(href='/add_course', style='text-decoration: none; color: #fff') Add new course
+      aside.col-3
+        .poly-card
+          .card
+            .card-header(align='center')
+              strong(style='font-size: 1.2rem;')
+                | Admin
+            .card-body(align='center')
+              img(src='../images/account.png')
+          .card
+            .card-header
+              i.fa.fa-list
+                strong(style='font-size: 1.2rem;')
+                  |   Danh sach chuc nang
+            .card-body
+              .list-group.list-group-flush
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly khoa hoc
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly bai giang
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly bai kiem tra
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly hoc sinh
+
+include /footer.pug    

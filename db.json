@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "user@gmail.com",
+      "password": "123456",
+      "repass": "123456",
+      "id": "VNZLYuHe"
+    },
+    {
+      "email": "user1@gmail.com",
+      "password": "123456",
+      "repass": "123456",
+      "id": "OCM3hgNE"
+    }
+  ]
+}

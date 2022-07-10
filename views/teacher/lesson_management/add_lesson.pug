@@ -1,0 +1,63 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Main Screen
+  link(rel='stylesheet', href='/css/common.css')
+  link(rel='stylesheet', href='/css/index.css')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4', crossorigin='anonymous')
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+  link(rel='stylesheet', type='text/css', href='../css/style.css')
+include /navbar.pug
+
+body
+  .container(style='height: auto;')
+    .row
+      article.col-9
+        .card
+          .card-header.bg-success
+            h3.text-center Register a new lesson
+          .card-body
+            form(method='POST', enctype='multipart/form-data')
+              .form-group
+                label(for='lesson_id') Lessons ID:
+                input#lesson_id.form-control(required='true', type='text', name='lesson_id')
+              .form-group
+                label(for='course_id') Course ID:
+                input#course_id.form-control(required='true', type='text', name='course_id')
+              .form-group
+                label(for='name') Lesson Name:
+                input#name.form-control(required='true', type='text', name='name')
+              .form-group
+                label(for='content') Description:
+                input#content.form-control(type='text', name='content')
+              .form-group
+                label(for='video') Video
+                br
+                input#video.form-control-file(required='true', type='file', name='video')
+
+              button.btn.btn-success Add
+      aside.col-3
+        .poly-card
+          .card
+            .card-header(align='center')
+              strong(style='font-size: 1.2rem;') Admin
+            .card-body(align='center')
+              img(src='../images/account.png')
+          .card
+            .card-header
+              i.fa.fa-list
+                strong(style='font-size: 1.2rem;')  Danh sach chuc nang
+            .card-body
+              .list-group.list-group-flush
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly khoa hoc
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly bai giang
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly bai kiem tra
+                a(href='#', style='text-decoration: none;')
+                  li.list-group-item Quan ly hoc sinh
+
+include /footer.pug    
